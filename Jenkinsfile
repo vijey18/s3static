@@ -5,8 +5,8 @@ pipeline {
         stage('deploy to S3'){
             steps{
                 
-                sh 'aws s3 rm s3://www.naanu.tk --recursive'
-                sh 'aws s3 cp public s3://www.naanu.tk --recursive'
+                sh 'aws s3 rm s3://vijeys3 --recursive'
+                sh 'aws s3 cp public s3://vijeys3 --recursive'
                                    }
         }
     }
