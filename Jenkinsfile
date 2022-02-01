@@ -4,11 +4,9 @@ pipeline {
     stages{
         stage('deploy to S3'){
             steps{
-                sh 'aws s3 cp public/index.html s3://vijeys3'
-                sh 'aws s3api put-object-acl --bucket vijeys3 --key index.html --acl public-read'
-                sh 'aws s3 cp public/error.html s3://vijeys3'
-                sh 'aws s3api put-object-acl --bucket vijeys3 --key error.html --acl public-read'
-            }
+                sh 'aws s3 rm s3://vijeys3 --recursive'
+                sh 'aws s3 cp public s3://vijeys3 --recursive'
+                            }
         }
     }
     post{
